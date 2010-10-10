@@ -425,6 +425,10 @@ abstract class ahBaseFormDoctrine extends sfFormDoctrine
         {
           $emptyFields++;
         }
+        elseif (count(array_filter($values[$key])) === 0)
+        {
+          $emptyFields++;
+        }
       }
       elseif ('' === trim($values[$key]))
       {
