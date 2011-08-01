@@ -426,7 +426,7 @@ abstract class ahBaseFormDoctrine extends sfFormDoctrine
           $emptyFields++;
         }
       }
-      elseif ('' === trim($values[$key]))
+      elseif (isset($values[$key]) && '' === trim($values[$key]))
       {
         $emptyFields++;
       }
