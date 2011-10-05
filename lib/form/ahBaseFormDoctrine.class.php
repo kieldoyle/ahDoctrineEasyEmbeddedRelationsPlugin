@@ -419,7 +419,7 @@ abstract class ahBaseFormDoctrine extends sfFormDoctrine
     $emptyFields = 0;
     foreach ($keys['considerNewFormEmptyFields'] as $key)
     {
-      if (is_array($values[$key]))
+      if (isset($values[$key]) &&  is_array($values[$key]))
       {
         if (count($values[$key]) === 0)
         {
@@ -430,7 +430,7 @@ abstract class ahBaseFormDoctrine extends sfFormDoctrine
           $emptyFields++;
         }
       }
-      elseif ('' === trim($values[$key]))
+      elseif (isset($values[$key]) && '' === trim($values[$key]))
       {
         $emptyFields++;
       }
