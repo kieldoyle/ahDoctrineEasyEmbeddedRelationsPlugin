@@ -257,7 +257,7 @@ abstract class ahBaseFormDoctrine extends sfFormDoctrine
         {
           if (!array_key_exists($containerName, $values) || $this->isNewFormEmpty($values[$containerName], $keys))
           {
-            unset($values[$containerName], $this->validatorSchema[$containerName]);
+            unset($values[$containerName], $this->validatorSchema[$containerName], $this->embeddedForms[$containerName]);
           }
         }
       }
